@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="scroll-progress">
+  <div class="scroll-progress-fill" id="scrollProgress"></div>
+</div>
 <header class="site-header">
   <a class="brand" href="#home">dhanush<span>.</span></a>
   <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
@@ -18,11 +21,28 @@
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme">☼</button>
 </header>
 
+<div class="hello-toast" id="helloToast" role="status" aria-live="polite">
+  <span class="toast-spark">✦</span><span><b>Hey, welcome!</b><small>Take a look around.</small></span>
+  <button type="button" class="toast-close" aria-label="Dismiss welcome message">×</button>
+</div>
 <main id="home">
 <section class="hero wrap">
   <div class="hero-copy">
     <div class="eyebrow"><span class="live-dot"></span> AVAILABLE FOR FULL-TIME ROLES, FREELANCE & COLLABORATIONS</div>
-    <p class="hello">Hey there, I'm</p>
+    <p class="hello">Hey there, I'm
+      <span class="hello-mascot" aria-hidden="true">
+        <span class="boy-sticker">
+          <span class="boy-hair"></span>
+          <span class="boy-head"><i class="boy-eye eye-left"></i><i class="boy-eye eye-right"></i><i class="boy-smile"></i></span>
+          <span class="boy-neck"></span>
+          <span class="boy-shirt"></span>
+          <span class="boy-wave-arm"><i class="boy-hand"></i></span>
+          <span class="boy-other-arm"></span>
+        </span>
+        <span class="hello-sparkle sparkle-one">✦</span>
+        <span class="hello-sparkle sparkle-two">✳</span>
+      </span>
+    </p>
     <h1>Dhanush <span>P.</span></h1>
     <h2>Curious mind. <em>Builder at heart.</em></h2>
     <p class="hero-text">I bring together business analytics, digital marketing and full-stack development to turn ideas into useful, thoughtful digital experiences.</p>
@@ -34,18 +54,32 @@
     </div>
   </div>
   <div class="hero-visual">
-    <div class="photo-frame"><img src="assets/photos/portrait-formal.jpeg" alt="Dhanush in a formal outfit"></div>
+    <div class="photo-frame"><img src="assets/photos/portrait-formal.png" alt="Dhanush in a formal outfit"></div>
+    <div class="tech-floaters" aria-hidden="true">
+      <span class="tech-bubble bubble-code">&lt;/&gt; <small>code mode</small></span>
+      <span class="tech-bubble bubble-spark">✳ <small>creative ideas</small></span>
+      <span class="tech-bubble bubble-data">▥ <small>data vibes</small></span>
+      <span class="tech-bubble bubble-cursor">↗ <small>building...</small></span>
+    </div>
     <div class="photo-sticker">GOOD IDEAS<br>NEED GOOD<br>EXECUTION <span>✳</span></div>
     <div class="floating-note"><span class="note-icon">✦</span><div><b>3-in-1 mindset</b><small>Think · Create · Improve</small></div></div>
   </div>
 </section>
 
-<section class="ticker" aria-label="Areas of interest"><div>BUSINESS ANALYTICS <span>✳</span> DIGITAL MARKETING <span>✳</span> FULL-STACK DEVELOPMENT <span>✳</span> ENTREPRENEURSHIP <span>✳</span> </div></section>
+<section class="ticker skill-bubble-strip" aria-label="Areas of interest">
+  <div class="skill-bubbles">
+    <span class="skill-bubble skill-purple"><span class="skill-icon">▥</span>Business Analytics</span>
+    <span class="skill-bubble skill-yellow"><span class="skill-icon">✳</span>Digital Marketing</span>
+    <span class="skill-bubble skill-mint"><span class="skill-icon">&lt;/&gt;</span>Full-Stack Development</span>
+    <span class="skill-bubble skill-coral"><span class="skill-icon">↗</span>Entrepreneurship</span>
+    <span class="skill-bubble skill-blue"><span class="skill-icon">◷</span>Project Management</span>
+  </div>
+</section>
 
 <section class="section wrap" id="about">
   <div class="section-heading"><span class="section-kicker">01 / A LITTLE ABOUT ME</span><span class="heading-aside">A mix of logic & imagination</span></div>
   <div class="about-grid">
-    <div class="about-intro"><h2>I enjoy making<br><em>things happen.</em></h2><p>With a Computer Science Engineering background and a PGDM in Business Analytics from XIME Bangalore, I enjoy working where technology, business and creativity meet.</p><p>From finding a story in data to shaping a digital campaign or building a web experience, I like taking an idea from “what if?” to “what's next?”.</p><a class="under-link" href="assets/Dhanush-Resume.pdf" target="_blank">View my resume ↗</a></div>
+    <div class="about-intro"><h2>I enjoy making<br><em>things happen.</em></h2><p>With a Computer Science Engineering background and a PGDM in Business Analytics from XIME Bangalore, I enjoy working where technology, business and creativity meet.</p><p>From finding a story in data to shaping a digital campaign or building a web experience, I like taking an idea from “what if?” to “what's next?”.</p><a class="under-link" href="assets/Dhanush-Resume.pdf" target="_blank">View my résumé ↗</a></div>
     <div class="about-photo"><img src="assets/photos/portrait-casual.jpeg" alt="Dhanush outdoors"><div class="photo-caption">A little curiosity goes a long way.</div></div>
     <div class="about-facts"><div class="fact-card lilac"><span>01</span><b>Business<br>Analytics</b><small>Insights that move decisions.</small></div><div class="fact-card yellow"><span>02</span><b>Digital<br>Marketing</b><small>Creative work with measurable impact.</small></div><div class="fact-card mint"><span>03</span><b>Full Stack<br>Development</b><small>Ideas shaped into digital products.</small></div></div>
   </div>
@@ -53,6 +87,11 @@
 
 
 <section class="section wrap" id="journey">
+  <div class="resume-side-sticker sticker-people" aria-hidden="true">
+    <span class="sticker-caption">people & ideas</span>
+    <span class="mini-doll"><i class="doll-hair"></i><i class="doll-face"><b></b><b></b><em></em></i><i class="doll-body"></i><i class="doll-arm"></i></span>
+    <span class="sticker-spark">✦</span>
+  </div>
   <div class="section-heading"><span class="section-kicker">02 / EXPERIENCE & EDUCATION</span><span class="heading-aside">The path so far</span></div>
   <div class="journey-grid">
     <div class="journey-column">
@@ -72,6 +111,11 @@
 </section>
 
 <section class="section wrap" id="services">
+  <div class="resume-side-sticker sticker-analyst" aria-hidden="true">
+    <span class="sticker-caption">data buddy</span>
+    <span class="mini-doll analyst-doll"><i class="doll-hair"></i><i class="doll-face"><b></b><b></b><em></em></i><i class="doll-body"></i><i class="doll-arm"></i></span>
+    <span class="analyst-chart">▂▅▃▇</span>
+  </div>
   <div class="section-heading"><span class="section-kicker">03 / HOW I CAN HELP</span><span class="heading-aside">Freelance services & collaborations</span></div>
   <div class="services-grid">
     <article class="service-card service-lilac"><div class="service-top"><span>01 — ANALYTICS</span><span class="service-symbol">↗</span></div><h3>Make data<br>make sense.</h3><p>Turn scattered information into clear dashboards, reports and practical business insights.</p><ul><li>Power BI dashboards</li><li>Excel & SQL analysis</li><li>KPI tracking and reporting</li></ul></article>
@@ -81,6 +125,9 @@
 </section>
 
 <section class="section wrap" id="work">
+  <div class="resume-side-sticker sticker-code" aria-hidden="true">
+    <span class="sticker-caption">build mode</span><b class="code-glyph">&lt;/&gt;</b><span class="code-cursor">▍</span>
+  </div>
   <div class="section-heading"><span class="section-kicker">04 / SELECTED WORK</span><span class="heading-aside">A few things I've explored</span></div>
   <div class="projects-grid">
     <article class="project-card project-featured"><div class="project-art analytics-art"><div class="chart-top"><span>CAMPAIGN OVERVIEW</span><span>↗</span></div><div class="metric-row"><div><small>ROAS</small><b>4.8x</b></div><div><small>CHANNELS</small><b>05</b></div><div><small>CAMPAIGNS</small><b>120</b></div></div><div class="bar-chart"><i style="height:38%"></i><i style="height:62%"></i><i style="height:47%"></i><i style="height:83%"></i><i style="height:68%"></i><i style="height:96%"></i><i style="height:73%"></i></div></div><div class="project-info"><div class="project-tags"><span>POWER BI</span><span>SQL</span><span>EXCEL</span></div><h3>E-Commerce Marketing Performance Analysis</h3><p>Analysed 120 campaigns across five channels using CTR, CPC, CPA, conversion rate and ROAS. Identified opportunities for smarter budget allocation.</p><a class="project-link" href="https://github.com/" target="_blank" rel="noopener">GitHub repository <span>↗</span></a></div></article>
@@ -90,7 +137,14 @@
   
 <div class="additional-projects"><span class="section-kicker">ALSO EXPLORED</span><div><b>IoT-enabled smart traffic light system</b><p>Sensor-based vehicle-density monitoring.</p></div><div><b>Smart blind assistance stick</b><p>Ultrasonic sensor-based obstacle detection.</p></div></div>
 
+  <p class="edit-hint">The GitHub buttons are ready — replace each <code>https://github.com/</code> link with your project repository URL.</p>
+</section>
+
+
 <section class="section wrap" id="publications">
+  <div class="resume-side-sticker sticker-research" aria-hidden="true">
+    <span class="sticker-caption">research lab</span><span class="research-lens">⌕</span><span class="research-dot"></span>
+  </div>
   <div class="section-heading"><span class="section-kicker">06 / PUBLICATIONS & RESEARCH</span><span class="heading-aside">Research contributions</span></div>
   <div class="publication-grid">
     <article class="publication-card"><span class="publication-year">IEEE · 2022</span><div class="publication-mark">01</div><h3>Parkinson’s Disease Prediction Using Vocal Frequency</h3><p>Co-authored research exploring machine learning techniques for Parkinson’s disease prediction using vocal-frequency features.</p><span class="publication-type">CONFERENCE PAPER</span></article>
@@ -121,12 +175,18 @@
 </section>
 
 <section class="section wrap" id="beyond">
+  <div class="resume-side-sticker sticker-market" aria-hidden="true">
+    <span class="sticker-caption">market watch</span>
+    <span class="market-symbol">₹</span>
+    <svg class="market-chart" viewBox="0 0 120 54" aria-hidden="true"><polyline points="2,42 20,32 34,37 49,18 65,25 82,9 98,16 116,3" /></svg>
+    <span class="market-up">↗ +</span>
+  </div>
   <div class="section-heading"><span class="section-kicker">08 / OUTSIDE THE WORK</span><span class="heading-aside">A few other interests</span></div>
   <div class="hobby-grid"><div class="hobby-main"><span class="hobby-emoji">📈</span><div><span class="section-kicker">MARKETS & CURIOSITY</span><h3>Stocks, spaces<br>& creative edits.</h3><p>Beyond my professional interests, I enjoy following the stock market, exploring home interior designs and experimenting with photo and video editing. A mix of numbers, aesthetics and creativity keeps me curious.</p></div><div class="scribble">↑ ↗ ↓ ↗</div></div><div class="hobby-side"><img src="assets/photos/portrait-blazer.jpeg" alt="Dhanush in a blazer"><span>Always learning something new ✳</span></div></div>
 </section>
 
 <section class="section wrap contact-section" id="contact">
-  <div class="contact-card"><div><span class="section-kicker">09 / SAY HELLO</span><h2>Have an idea?<br><em>Let's make it real.</em></h2><p>For freelance projects, collaborations, business ideas or just a good conversation — my inbox is open.</p></div><div class="contact-actions"><a class="contact-mail" href="mailto:dhanushd667@gmail.com">dhanushd667@gmail.com ↗</a><a class="btn btn-light" href="https://wa.me/918778970040?text=Hi%20Dhanush%2C%20I%20visited%20your%20portfolio." target="_blank" rel="noopener">Let's Catch Up on WhatsApp ↗</a><a class="resume-link" href="assets/Dhanush-Resume.pdf" target="_blank">Download resume ↓</a></div></div>
+  <div class="contact-card"><div><span class="section-kicker">09 / SAY HELLO</span><h2>Have an idea?<br><em>Let's make it real.</em></h2><p>For freelance projects, collaborations, business ideas or just a good conversation — my inbox is open.</p></div><div class="contact-actions"><a class="contact-mail" href="mailto:dhanushd667@gmail.com">dhanushd667@gmail.com ↗</a><a class="btn btn-light" href="https://wa.me/918778970040?text=Hi%20Dhanush%2C%20I%20visited%20your%20portfolio." target="_blank" rel="noopener">Let's Catch Up on WhatsApp ↗</a><a class="resume-link" href="assets/Dhanush-Resume.pdf" target="_blank">Download résumé ↓</a></div></div>
 </section>
 </main>
 <footer class="wrap footer"><a class="brand" href="#home">dhanush<span>.</span></a><p>Made with curiosity and a little bit of ☕</p><span>© <span id="year"></span> Dhanush P</span></footer>
