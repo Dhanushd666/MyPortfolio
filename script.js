@@ -173,3 +173,21 @@ updateScrollProgress();
 
   observer.observe(section);
 })();
+
+
+// Reveal the skills cards when the Skills section enters the viewport.
+(() => {
+  const section = document.querySelector('#skills');
+  if (!section) return;
+  if (!('IntersectionObserver' in window)) {
+    section.classList.add('skills-visible');
+    return;
+  }
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      section.classList.add('skills-visible');
+      observer.disconnect();
+    }
+  }, { threshold: 0.16 });
+  observer.observe(section);
+})();
