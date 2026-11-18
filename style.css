@@ -1321,3 +1321,88 @@ img, svg, video { max-width: 100%; }
   .skill-bubble { font-size: .66rem; padding: 9px 11px; }
   .whatsapp-float { right: 9px; bottom: 9px; }
 }
+
+
+/* ==========================================================
+   SEAMLESS SKILLS BUBBLE LOOP — overrides only the ticker
+   ========================================================== */
+.ticker.skill-bubble-strip {
+  overflow: hidden;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  white-space: nowrap;
+}
+
+.ticker.skill-bubble-strip .skill-bubbles {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  max-width: none;
+  margin: 0;
+  animation: skillBubbleLoop 32s linear infinite;
+  will-change: transform;
+}
+
+.skill-bubble-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 15px;
+  width: max-content;
+  padding-right: 15px;
+}
+
+.ticker.skill-bubble-strip .skill-bubble {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  max-width: none;
+}
+
+@keyframes skillBubbleLoop {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ticker.skill-bubble-strip:hover .skill-bubbles {
+  animation-play-state: paused;
+}
+
+@media (max-width: 650px) {
+  .ticker.skill-bubble-strip {
+    overflow: hidden;
+    padding: 14px 0 24px;
+  }
+  .ticker.skill-bubble-strip .skill-bubbles {
+    gap: 0;
+    animation-duration: 27s;
+  }
+  .skill-bubble-group {
+    gap: 10px;
+    padding-right: 10px;
+  }
+  .ticker.skill-bubble-strip .skill-bubble {
+    max-width: none;
+    white-space: nowrap;
+    min-height: 43px;
+    padding: 10px 14px;
+    font-size: .7rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .ticker.skill-bubble-strip .skill-bubble {
+    font-size: .66rem;
+    padding: 9px 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker.skill-bubble-strip .skill-bubbles {
+    animation: none;
+    transform: none;
+  }
+}
