@@ -612,9 +612,6 @@
   .sticker-people, .sticker-research { right: -12px; }
   .sticker-code, .sticker-market { left: -12px; }
 }
-@media (max-width: 760px) {
-  .resume-side-sticker { display: none; }
-}
 @media (prefers-reduced-motion: reduce) {
   .resume-side-sticker, .resume-side-sticker *,
   .market-chart polyline { animation: none !important; }
@@ -1305,7 +1302,6 @@ img, svg, video { max-width: 100%; }
   .contact-actions { min-width: 0; }
   .contact-mail { overflow-wrap: anywhere; }
   .footer { align-items: flex-start; }
-  .resume-side-sticker { display: none !important; }
   .whatsapp-float { max-width: calc(100vw - 26px); }
 }
 
@@ -1323,67 +1319,70 @@ img, svg, video { max-width: 100%; }
 }
 
 
-/* MOBILE SIDE-STICKER FIX
-   The original stylesheet hides every resume-side sticker in tablet/phone
-   media queries. This final override restores them without changing layout. */
-@media (max-width: 900px) {
-  .resume-side-sticker {
+/* FINAL MOBILE VISIBILITY FIX FOR THE DECORATIVE SIDE STICKERS */
+@media screen and (max-width: 760px) {
+  .section.wrap {
+    position: relative;
+    overflow: visible !important;
+  }
+
+  .section.wrap > .resume-side-sticker {
     display: grid !important;
-    width: 78px;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    z-index: 8 !important;
+    width: 76px;
     min-height: 76px;
-    border-radius: 15px;
-    opacity: .96;
-    scale: .72;
-    transform-origin: top right;
-    z-index: 5;
+    pointer-events: none;
     animation: resumeStickerFloat 5.4s ease-in-out infinite !important;
   }
 
-  .resume-side-sticker .sticker-caption {
-    font-size: .43rem;
-    top: 7px;
-    left: 8px;
-    right: 8px;
-  }
-
-  .sticker-people,
-  .sticker-analyst,
-  .sticker-research {
-    right: 0 !important;
+  .section.wrap > .sticker-people,
+  .section.wrap > .sticker-analyst,
+  .section.wrap > .sticker-research {
+    top: 72px !important;
+    right: 8px !important;
     left: auto !important;
-    top: 4px;
+    transform: rotate(3deg) scale(.72);
+    transform-origin: top right;
   }
 
-  .sticker-code,
-  .sticker-market {
-    left: 0 !important;
+  .section.wrap > .sticker-code,
+  .section.wrap > .sticker-market {
+    top: 72px !important;
+    left: 8px !important;
     right: auto !important;
-    top: 4px;
+    transform: rotate(-3deg) scale(.72);
     transform-origin: top left;
   }
 
-  .sticker-people .mini-doll,
-  .sticker-analyst .mini-doll {
+  .resume-side-sticker .sticker-caption {
+    top: 7px;
+    left: 8px;
+    right: 8px;
+    font-size: .42rem;
+  }
+
+  .resume-side-sticker .mini-doll {
     scale: .78;
-    animation: miniDollBob 2.8s ease-in-out infinite !important;
-  }
-
-  .research-lens {
-    font-size: 2.45rem;
-  }
-
-  .research-dot,
-  .market-chart polyline,
-  .code-cursor,
-  .sticker-spark {
-    animation-play-state: running !important;
   }
 }
 
-@media (max-width: 650px) {
-  .resume-side-sticker {
-    width: 72px;
-    min-height: 70px;
-    scale: .68;
+@media screen and (max-width: 380px) {
+  .section.wrap > .resume-side-sticker {
+    width: 68px;
+    min-height: 68px;
+  }
+  .section.wrap > .sticker-people,
+  .section.wrap > .sticker-analyst,
+  .section.wrap > .sticker-research {
+    right: 5px !important;
+    transform: rotate(3deg) scale(.64);
+  }
+  .section.wrap > .sticker-code,
+  .section.wrap > .sticker-market {
+    left: 5px !important;
+    transform: rotate(-3deg) scale(.64);
   }
 }
